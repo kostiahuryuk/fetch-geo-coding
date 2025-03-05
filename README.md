@@ -17,7 +17,7 @@ git clone git@github.com:kostiahuryuk/fetch-geo-coding.git
 ```sh
 npm install
 ```
-3. **create .env file in your repo**
+3. **(optional for now)** create .env file in your repo  **PLEASE NOTE!** API_KEY Temporary hardcoded but will be removed after review! 
 	1. In the project root directory, create a file named .env
         touch .env
 	2. Add the following line to it:
@@ -52,7 +52,6 @@ npm start "Los Angeles, CA"
 ```sh
 npm test
 ```
-
 
 #  Project Structure
 ```plaintext
