@@ -80,5 +80,6 @@ This project integrated with GitHub Actions for Continuous Integration (CI) to a
 ```plaintext 
     .github/workflows/test.yml
 ```
+Past CI expectations: https://github.com/kostiahuryuk/fetch-geo-coding/actions
 
 
