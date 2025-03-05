@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "node src/geoloc-util.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "coverage": "jest --coverage"
   },
   "bin": {
     "geoloc-util": "./src/geoloc-util.js"
