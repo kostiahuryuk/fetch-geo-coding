@@ -17,7 +17,7 @@ git clone git@github.com:kostiahuryuk/fetch-geo-coding.git
 ```sh
 npm install
 ```
-3. **create a .env file please follow:**
+3. **create .env file in your repo**
 	1. In the project root directory, create a file named .env
         touch .env
 	2. Add the following line to it:
@@ -30,6 +30,7 @@ use your own dedicated API key.
 https://home.openweathermap.org/users/sign_up
 
 4. **Usage**
+
 Using the --locations flag:
 ```sh
 geoloc-util --locations "Madison, WI" "12345"
