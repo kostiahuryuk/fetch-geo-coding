@@ -10,7 +10,7 @@ if (!API_KEY) {
     process.exit(1);
 }
 
-async function getByCity(city, state = "", country = "US") {
+async function getByLocationName(city, state = "", country = "US") {
     try {
         const query = state ? `${city},${state},${country}` : `${city},${country}`;
         const response = await axios.get("http://api.openweathermap.org/geo/1.0/direct", {
@@ -34,7 +34,7 @@ async function getByCity(city, state = "", country = "US") {
     }
 }
 
-async function getByZip(zip, country = "US") {
+async function getByZipcode(zip, country = "US") {
     try {
         const response = await axios.get("http://api.openweathermap.org/geo/1.0/zip", {
             params: { zip: `${zip},${country}`, appid: API_KEY },
@@ -61,11 +61,11 @@ async function multipleLocations(locations) {
 
     for (const location of locations) {
         if (/^\d+$/.test(location)) {
-            const data = await getByZip(location);
+            const data = await getByZipcode(location);
             if (data) results.push(data);
         } else {
             const [city, state] = location.split(",");
-            const data = await getByCity(city.trim(), state ? state.trim() : "");
+            const data = await getByLocationName(city.trim(), state ? state.trim() : "");
             if (data) results.push(data);
         }
     }
@@ -79,7 +79,7 @@ async function multipleLocations(locations) {
     return results;
 }
 
-module.exports = { getByCity, getByZip, multipleLocations };
+module.exports = { getByCity: getByLocationName, getByZip: getByZipcode, multipleLocations };
 
 if (require.main === module) {
     program
