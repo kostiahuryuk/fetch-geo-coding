@@ -3,7 +3,7 @@ const axios = require('axios');
 const { program } = require('commander');
 require( "dotenv" ).config();
 
-const API_KEY = process.env.API_KEY || "f897a99d971b5eef57be6fafa0d83239";
+const API_KEY = process.env.API_KEY || "fe979d5d1c813df6c6ce742289197f1f";
 
 if (!API_KEY) {
     console.error("ERROR: API_KEY is missing or used all the limits for existing key. Please set it in the .env file or provide it as an environment variable.");
